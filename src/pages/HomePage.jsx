@@ -11,7 +11,6 @@ import EmotionsCollage from "../components/EmotionsCollage";
 import TestimonialsSection from "../components/TestimonialsSection";
 import FAQSection from "../components/FAQSection";
 import FinalConversion from "../components/FinalConversion";
-import LocationsSection from "../components/LocationsSection";
 import LatestJournalSection from "../components/LatestJournalSection";
 
 export default function HomePage({
@@ -62,9 +61,6 @@ export default function HomePage({
       <PackagesSection
         onInquirePackage={(pkgName) => onOpenInquiry(pkgName)}
       />
-
-      {/* 8b. Regional Locations Across Odisha (SEO & Local Authority) */}
-      <LocationsSection onNavigate={onNavigate} />
 
       {/* 9. The People and Emotions */}
       <EmotionsCollage />

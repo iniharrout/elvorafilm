@@ -1,9 +1,17 @@
 import React from "react";
 import { BLOG_POSTS } from "../data/blogData";
-import { Clock, ArrowRight, BookOpen } from "lucide-react";
+import { Clock, ArrowRight } from "lucide-react";
 
 export default function LatestJournalSection({ onNavigate, onSelectPost }) {
-  const latestPosts = BLOG_POSTS.slice(0, 3);
+  // Select 3 high-intent, universal planning guides for the homepage
+  const universalSlugs = [
+    "wedding-photography-cost-odisha-pricing-packages",
+    "candid-vs-traditional-wedding-photography",
+    "drone-fpv-cinematography-indian-weddings"
+  ];
+  const latestPosts = universalSlugs
+    .map((s) => BLOG_POSTS.find((p) => p.slug === s))
+    .filter(Boolean);
 
   return (
     <section
@@ -81,7 +89,7 @@ export default function LatestJournalSection({ onNavigate, onSelectPost }) {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
             gap: "2.2rem"
           }}
         >

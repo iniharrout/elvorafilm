@@ -20,8 +20,7 @@ export default function Navbar({ currentRoute, onNavigate, onOpenInquiry }) {
 
   const navLinks = [
     { label: "Home", route: "home" },
-    { label: "Our Stories", route: "stories" },
-    { label: "Locations", route: "locations" },
+    { label: "Stories", route: "stories" },
     { label: "Services", route: "services" },
     { label: "Packages", route: "packages" },
     { label: "Journal", route: "blog" },
@@ -46,14 +45,14 @@ export default function Navbar({ currentRoute, onNavigate, onOpenInquiry }) {
           zIndex: 1000,
           transition: "background-color 0.4s ease, border-color 0.4s ease, padding 0.4s ease",
           backgroundColor: isScrolled
-            ? "rgba(12, 12, 14, 0.94)"
-            : "rgba(12, 12, 14, 0.35)",
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
+            ? "rgba(12, 12, 14, 0.96)"
+            : "rgba(12, 12, 14, 0.45)",
+          backdropFilter: "blur(14px)",
+          WebkitBackdropFilter: "blur(14px)",
           borderBottom: isScrolled
-            ? "1px solid rgba(197, 160, 89, 0.2)"
+            ? "1px solid rgba(197, 160, 89, 0.25)"
             : "1px solid rgba(255, 255, 255, 0.08)",
-          padding: isScrolled ? "0.85rem 0" : "1.35rem 0"
+          padding: isScrolled ? "0.75rem 0" : "1.1rem 0"
         }}
       >
         <div
@@ -61,7 +60,8 @@ export default function Navbar({ currentRoute, onNavigate, onOpenInquiry }) {
           style={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between"
+            justifyContent: "space-between",
+            gap: "1rem"
           }}
         >
           {/* Brand Logo & Monogram */}
@@ -70,11 +70,12 @@ export default function Navbar({ currentRoute, onNavigate, onOpenInquiry }) {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "0.85rem",
+              gap: "0.75rem",
               background: "none",
               border: "none",
               textAlign: "left",
-              padding: 0
+              padding: 0,
+              flexShrink: 0
             }}
             aria-label="Elvora Film Home"
           >
@@ -82,8 +83,8 @@ export default function Navbar({ currentRoute, onNavigate, onOpenInquiry }) {
               src="/assets/images/elvora-emblem.png"
               alt="Elvora Film Monogram"
               style={{
-                width: "36px",
-                height: "36px",
+                width: "34px",
+                height: "34px",
                 objectFit: "contain",
                 filter: "drop-shadow(0 2px 8px rgba(197, 160, 89, 0.3))"
               }}
@@ -92,7 +93,7 @@ export default function Navbar({ currentRoute, onNavigate, onOpenInquiry }) {
               <span
                 style={{
                   fontFamily: "var(--font-serif)",
-                  fontSize: "1.35rem",
+                  fontSize: "1.28rem",
                   letterSpacing: "0.14em",
                   color: "#FAF7F2",
                   fontWeight: 400,
@@ -105,15 +106,15 @@ export default function Navbar({ currentRoute, onNavigate, onOpenInquiry }) {
               <span
                 style={{
                   fontFamily: "var(--font-label)",
-                  fontSize: "0.58rem",
-                  letterSpacing: "0.26em",
+                  fontSize: "0.55rem",
+                  letterSpacing: "0.22em",
                   color: "var(--color-gold)",
                   textTransform: "uppercase",
                   display: "block",
                   marginTop: "3px"
                 }}
               >
-                BHUBANESWAR • CINEMA &amp; STILLS
+                WEDDING CINEMA &amp; STILLS
               </span>
             </div>
           </button>
@@ -123,7 +124,8 @@ export default function Navbar({ currentRoute, onNavigate, onOpenInquiry }) {
             style={{
               display: "none",
               alignItems: "center",
-              gap: "2.2rem"
+              gap: "clamp(1rem, 1.6vw, 1.8rem)",
+              flexWrap: "nowrap"
             }}
             className="desktop-nav"
           >
@@ -135,14 +137,15 @@ export default function Navbar({ currentRoute, onNavigate, onOpenInquiry }) {
                   onClick={() => handleLinkClick(item.route)}
                   style={{
                     fontFamily: "var(--font-sans)",
-                    fontSize: "0.82rem",
-                    letterSpacing: "0.12em",
+                    fontSize: "0.78rem",
+                    letterSpacing: "0.1em",
                     textTransform: "uppercase",
                     fontWeight: active ? 600 : 400,
                     color: active ? "var(--color-gold-light)" : "rgba(247, 244, 238, 0.8)",
                     borderBottom: active ? "1px solid var(--color-gold)" : "1px solid transparent",
                     paddingBottom: "4px",
-                    transition: "color 0.25s ease, border-color 0.25s ease"
+                    whiteSpace: "nowrap",
+                    transition: "color 0.2s ease, border-color 0.2s ease"
                   }}
                   onMouseEnter={(e) => {
                     if (!active) e.currentTarget.style.color = "#FFFFFF";
@@ -278,7 +281,7 @@ export default function Navbar({ currentRoute, onNavigate, onOpenInquiry }) {
             }}
           >
             <div style={{ color: "rgba(247, 244, 238, 0.7)", fontSize: "0.85rem" }}>
-              <p style={{ margin: 0, color: "var(--color-gold)" }}>Bhubaneswar, Odisha, India</p>
+              <p style={{ margin: 0, color: "var(--color-gold)" }}>Available Across India &amp; Worldwide</p>
               <p style={{ margin: "4px 0 0" }}>{BRAND_INFO.phone}</p>
             </div>
 
@@ -300,7 +303,7 @@ export default function Navbar({ currentRoute, onNavigate, onOpenInquiry }) {
 
       {/* Responsive Inline CSS for desktop nav display */}
       <style>{`
-        @media (min-width: 992px) {
+        @media (min-width: 1040px) {
           .desktop-nav {
             display: flex !important;
           }

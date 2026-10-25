@@ -135,7 +135,7 @@ export default function FinalConversion({ onOpenInquiry }) {
             textTransform: "uppercase"
           }}
         >
-          <span>Bhubaneswar, Odisha</span>
+          <span>Available Across India &amp; Destination Celebrations</span>
           <span>•</span>
           <a
             href={`tel:${BRAND_INFO.phoneRaw}`}

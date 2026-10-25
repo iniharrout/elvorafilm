@@ -97,13 +97,13 @@ export default function Hero({ onExploreStories, onOpenInquiry, onOpenFilm }) {
             style={{
               fontFamily: "var(--font-label)",
               fontSize: "0.68rem",
-              letterSpacing: "0.24em",
+              letterSpacing: "0.22em",
               textTransform: "uppercase",
               color: "var(--color-gold-light)",
               fontWeight: 500
             }}
           >
-            BHUBANESWAR, INDIA • WEDDING CINEMATOGRAPHY
+            DESTINATION &amp; LUXURY WEDDING CINEMA
           </span>
         </div>
 
@@ -116,7 +116,7 @@ export default function Hero({ onExploreStories, onOpenInquiry, onOpenFilm }) {
             fontSize: "0.75rem"
           }}
         >
-          WEDDING PHOTOGRAPHY &amp; CINEMATOGRAPHY
+          CINEMATIC WEDDING FILMS &amp; FINE-ART PHOTOGRAPHY
         </span>
 
         {/* Main Headline */}
@@ -149,16 +149,15 @@ export default function Hero({ onExploreStories, onOpenInquiry, onOpenFilm }) {
         <p
           style={{
             fontFamily: "var(--font-sans)",
-            fontSize: "clamp(1rem, 1.8vw, 1.25rem)",
-            color: "rgba(247, 244, 238, 0.82)",
-            maxWidth: "680px",
+            fontSize: "clamp(1rem, 1.8vw, 1.22rem)",
+            color: "rgba(247, 244, 238, 0.85)",
+            maxWidth: "720px",
             lineHeight: 1.68,
             fontWeight: 300,
             margin: "0 auto 2.5rem"
           }}
         >
-          We capture the emotions, traditions, and little moments that make your
-          wedding uniquely yours.
+          We preserve the authentic tears, sacred rituals, and quiet glances that make your wedding unforgettable. Available across India and destination celebrations worldwide.
         </p>
 
         {/* Action Buttons */}
@@ -245,20 +244,20 @@ export default function Hero({ onExploreStories, onOpenInquiry, onOpenFilm }) {
               fontFamily: "var(--font-sans)",
               fontSize: "0.72rem",
               letterSpacing: "0.12em",
-              color: "rgba(247, 244, 238, 0.5)"
+              color: "rgba(247, 244, 238, 0.6)"
             }}
           >
-            ESTABLISHED IN BHUBANESWAR
+            AVAILABLE PAN-INDIA &amp; DESTINATIONS
           </span>
           <span
             style={{
               fontFamily: "var(--font-sans)",
               fontSize: "0.72rem",
               letterSpacing: "0.12em",
-              color: "rgba(247, 244, 238, 0.5)"
+              color: "rgba(247, 244, 238, 0.6)"
             }}
           >
-            PAN-INDIA COVERAGE
+            4K CINEMA &amp; HEIRLOOM ALBUMS
           </span>
         </div>
 
