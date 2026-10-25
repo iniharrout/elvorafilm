@@ -21,8 +21,10 @@ export default function Navbar({ currentRoute, onNavigate, onOpenInquiry }) {
   const navLinks = [
     { label: "Home", route: "home" },
     { label: "Our Stories", route: "stories" },
+    { label: "Locations", route: "locations" },
     { label: "Services", route: "services" },
     { label: "Packages", route: "packages" },
+    { label: "Journal", route: "blog" },
     { label: "About", route: "about" },
     { label: "Contact", route: "contact" }
   ];

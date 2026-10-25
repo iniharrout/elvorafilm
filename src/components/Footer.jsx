@@ -166,14 +166,14 @@ export default function Footer({ onNavigate }) {
                 margin: 0,
                 display: "flex",
                 flexDirection: "column",
-                gap: "0.8rem",
-                fontSize: "0.9rem"
+                gap: "0.75rem",
+                fontSize: "0.88rem"
               }}
             >
               <li>
                 <button
                   onClick={() => handleNav("home")}
-                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s" }}
+                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s", background: "none", border: "none", cursor: "pointer", padding: 0 }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold-light)")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247, 244, 238, 0.8)")}
                 >
@@ -183,7 +183,7 @@ export default function Footer({ onNavigate }) {
               <li>
                 <button
                   onClick={() => handleNav("stories")}
-                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s" }}
+                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s", background: "none", border: "none", cursor: "pointer", padding: 0 }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold-light)")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247, 244, 238, 0.8)")}
                 >
@@ -193,27 +193,17 @@ export default function Footer({ onNavigate }) {
               <li>
                 <button
                   onClick={() => handleNav("services")}
-                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s" }}
+                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s", background: "none", border: "none", cursor: "pointer", padding: 0 }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold-light)")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247, 244, 238, 0.8)")}
                 >
-                  Photography &amp; Films
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNav("services")}
-                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold-light)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247, 244, 238, 0.8)")}
-                >
-                  Services
+                  Craft &amp; Services
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => handleNav("packages")}
-                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s" }}
+                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s", background: "none", border: "none", cursor: "pointer", padding: 0 }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold-light)")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247, 244, 238, 0.8)")}
                 >
@@ -223,7 +213,7 @@ export default function Footer({ onNavigate }) {
               <li>
                 <button
                   onClick={() => handleNav("about")}
-                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s" }}
+                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s", background: "none", border: "none", cursor: "pointer", padding: 0 }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold-light)")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247, 244, 238, 0.8)")}
                 >
@@ -233,11 +223,165 @@ export default function Footer({ onNavigate }) {
               <li>
                 <button
                   onClick={() => handleNav("contact")}
-                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s" }}
+                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s", background: "none", border: "none", cursor: "pointer", padding: 0 }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold-light)")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247, 244, 238, 0.8)")}
                 >
                   Wedding Inquiry
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Regional Odisha Locations (SEO Goldmine) */}
+          <div>
+            <span
+              style={{
+                fontFamily: "var(--font-label)",
+                fontSize: "0.72rem",
+                letterSpacing: "0.22em",
+                color: "var(--color-gold)",
+                textTransform: "uppercase",
+                display: "block",
+                marginBottom: "1.4rem"
+              }}
+            >
+              ODISHA LOCATIONS
+            </span>
+            <ul
+              style={{
+                listStyle: "none",
+                padding: 0,
+                margin: 0,
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.75rem",
+                fontSize: "0.88rem"
+              }}
+            >
+              <li>
+                <button
+                  onClick={() => handleNav("location-bhubaneswar")}
+                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold-light)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247, 244, 238, 0.8)")}
+                >
+                  Bhubaneswar Weddings
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNav("location-cuttack")}
+                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold-light)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247, 244, 238, 0.8)")}
+                >
+                  Cuttack (Kattag) Films
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNav("location-berhampur")}
+                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold-light)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247, 244, 238, 0.8)")}
+                >
+                  Berhampur (Barampur) Silk Weddings
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNav("location-puri")}
+                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold-light)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247, 244, 238, 0.8)")}
+                >
+                  Puri Beach Destination Weddings
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNav("locations")}
+                  style={{ color: "var(--color-gold-light)", fontWeight: 500, transition: "color 0.2s", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                >
+                  View All Odisha Coverage →
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Journal / Blog Guides */}
+          <div>
+            <span
+              style={{
+                fontFamily: "var(--font-label)",
+                fontSize: "0.72rem",
+                letterSpacing: "0.22em",
+                color: "var(--color-gold)",
+                textTransform: "uppercase",
+                display: "block",
+                marginBottom: "1.4rem"
+              }}
+            >
+              THE JOURNAL
+            </span>
+            <ul
+              style={{
+                listStyle: "none",
+                padding: 0,
+                margin: 0,
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.75rem",
+                fontSize: "0.88rem"
+              }}
+            >
+              <li>
+                <button
+                  onClick={() => handleNav("blog-post", "top-wedding-venues-in-bhubaneswar-odisha")}
+                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s", background: "none", border: "none", cursor: "pointer", padding: 0, textAlign: "left" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold-light)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247, 244, 238, 0.8)")}
+                >
+                  Bhubaneswar Luxury Venues
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNav("blog-post", "wedding-photography-cost-odisha-pricing-packages")}
+                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s", background: "none", border: "none", cursor: "pointer", padding: 0, textAlign: "left" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold-light)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247, 244, 238, 0.8)")}
+                >
+                  Wedding Photography Cost Guide
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNav("blog-post", "odia-wedding-rituals-guide-traditions")}
+                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s", background: "none", border: "none", cursor: "pointer", padding: 0, textAlign: "left" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold-light)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247, 244, 238, 0.8)")}
+                >
+                  Sacred Odia Wedding Rituals
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNav("blog-post", "best-pre-wedding-shoot-locations-bhubaneswar-odisha")}
+                  style={{ color: "rgba(247, 244, 238, 0.8)", transition: "color 0.2s", background: "none", border: "none", cursor: "pointer", padding: 0, textAlign: "left" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold-light)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247, 244, 238, 0.8)")}
+                >
+                  Top 10 Pre-Wedding Shoot Places
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNav("blog")}
+                  style={{ color: "var(--color-gold-light)", fontWeight: 500, transition: "color 0.2s", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                >
+                  Read All 10 Guides →
                 </button>
               </li>
             </ul>

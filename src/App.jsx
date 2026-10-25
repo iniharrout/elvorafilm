@@ -6,7 +6,7 @@ import InquiryModal from "./components/InquiryModal";
 import StoryModal from "./components/StoryModal";
 import VideoModal from "./components/VideoModal";
 
-// Pages
+// Existing Pages
 import HomePage from "./pages/HomePage";
 import StoriesPage from "./pages/StoriesPage";
 import ServicesPage from "./pages/ServicesPage";
@@ -16,8 +16,17 @@ import ContactPage from "./pages/ContactPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import TermsPage from "./pages/TermsPage";
 
+// SEO & Regional Pages
+import LocationPage from "./pages/LocationPage";
+import LocationsHubPage from "./pages/LocationsHubPage";
+import BlogListPage from "./pages/BlogListPage";
+import BlogPostPage from "./pages/BlogPostPage";
+
 export default function App() {
   const [currentRoute, setCurrentRoute] = useState("home");
+  const [selectedBlogSlug, setSelectedBlogSlug] = useState("");
+  const [currentCityKey, setCurrentCityKey] = useState("bhubaneswar");
+
   const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
   const [inquiryPackage, setInquiryPackage] = useState("");
   const [inquiryService, setInquiryService] = useState("");
@@ -26,32 +35,88 @@ export default function App() {
 
   // Sync with browser URL / hash
   useEffect(() => {
-    const handleLocationChange = () => {
-      const hash = window.location.hash.replace("#", "").toLowerCase();
-      const validRoutes = ["home", "stories", "services", "packages", "about", "contact", "privacy", "terms"];
-      if (validRoutes.includes(hash)) {
-        setCurrentRoute(hash);
-      } else {
-        const path = window.location.pathname.replace("/", "").toLowerCase();
-        if (validRoutes.includes(path)) {
-          setCurrentRoute(path);
+    const parseUrl = () => {
+      let raw = window.location.hash.replace(/^#/, "").trim().toLowerCase();
+      if (!raw) {
+        raw = window.location.pathname.replace(/^\//, "").trim().toLowerCase();
+      }
+
+      // Check for blog post path e.g. blog/slug or blog-post/slug
+      if (raw.startsWith("blog/") || raw.startsWith("blog-post/")) {
+        const parts = raw.split("/");
+        if (parts[1]) {
+          setSelectedBlogSlug(parts[1]);
+          setCurrentRoute("blog-post");
+          return;
         }
+      }
+
+      // Check for locations alias mapping
+      if (raw === "bhubaneswar" || raw === "location-bhubaneswar") {
+        setCurrentCityKey("bhubaneswar");
+        setCurrentRoute("location-bhubaneswar");
+        return;
+      }
+      if (raw === "cuttack" || raw === "kattag" || raw === "location-cuttack" || raw === "location-kattag") {
+        setCurrentCityKey("cuttack");
+        setCurrentRoute("location-cuttack");
+        return;
+      }
+      if (raw === "berhampur" || raw === "barampur" || raw === "brahmapur" || raw === "location-berhampur" || raw === "location-barampur") {
+        setCurrentCityKey("berhampur");
+        setCurrentRoute("location-berhampur");
+        return;
+      }
+      if (raw === "puri" || raw === "location-puri") {
+        setCurrentCityKey("puri");
+        setCurrentRoute("location-puri");
+        return;
+      }
+
+      const standardRoutes = [
+        "home",
+        "stories",
+        "services",
+        "packages",
+        "about",
+        "contact",
+        "privacy",
+        "terms",
+        "locations",
+        "blog"
+      ];
+
+      if (standardRoutes.includes(raw)) {
+        setCurrentRoute(raw);
+      } else {
+        setCurrentRoute("home");
       }
     };
 
-    handleLocationChange();
-    window.addEventListener("popstate", handleLocationChange);
-    window.addEventListener("hashchange", handleLocationChange);
+    parseUrl();
+    window.addEventListener("popstate", parseUrl);
+    window.addEventListener("hashchange", parseUrl);
 
     return () => {
-      window.removeEventListener("popstate", handleLocationChange);
-      window.removeEventListener("hashchange", handleLocationChange);
+      window.removeEventListener("popstate", parseUrl);
+      window.removeEventListener("hashchange", parseUrl);
     };
   }, []);
 
-  const navigateTo = (route) => {
-    setCurrentRoute(route);
-    window.location.hash = route === "home" ? "" : route;
+  const navigateTo = (route, param = "") => {
+    if (route.startsWith("location-")) {
+      const city = route.replace("location-", "");
+      setCurrentCityKey(city);
+      setCurrentRoute(route);
+      window.location.hash = route;
+    } else if (route === "blog-post" && param) {
+      setSelectedBlogSlug(param);
+      setCurrentRoute("blog-post");
+      window.location.hash = `blog/${param}`;
+    } else {
+      setCurrentRoute(route);
+      window.location.hash = route === "home" ? "" : route;
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -78,6 +143,7 @@ export default function App() {
             onOpenInquiry={handleOpenInquiry}
             onOpenFilm={() => setVideoModalOpen(true)}
             onSelectStory={(story) => setSelectedStory(story)}
+            onSelectPost={(slug) => navigateTo("blog-post", slug)}
           />
         )}
 
@@ -117,6 +183,39 @@ export default function App() {
         {currentRoute === "privacy" && <PrivacyPage />}
 
         {currentRoute === "terms" && <TermsPage />}
+
+        {/* Regional Locations Pages */}
+        {currentRoute === "locations" && (
+          <LocationsHubPage
+            onNavigate={navigateTo}
+            onOpenInquiry={handleOpenInquiry}
+          />
+        )}
+
+        {currentRoute.startsWith("location-") && (
+          <LocationPage
+            cityKey={currentCityKey}
+            onNavigate={navigateTo}
+            onOpenInquiry={handleOpenInquiry}
+          />
+        )}
+
+        {/* Blog & Journal Pages */}
+        {currentRoute === "blog" && (
+          <BlogListPage
+            onNavigate={navigateTo}
+            onSelectPost={(slug) => navigateTo("blog-post", slug)}
+          />
+        )}
+
+        {currentRoute === "blog-post" && (
+          <BlogPostPage
+            slug={selectedBlogSlug}
+            onNavigate={navigateTo}
+            onSelectPost={(slug) => navigateTo("blog-post", slug)}
+            onOpenInquiry={handleOpenInquiry}
+          />
+        )}
       </div>
 
       {/* Floating Discreet WhatsApp Badge */}
