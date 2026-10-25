@@ -1,6 +1,6 @@
 import React from "react";
 import { LOCATIONS_DATA } from "../data/locationsData";
-import { MapPin, ArrowRight, ShieldCheck } from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
 
 export default function LocationsSection({ onNavigate }) {
   const locations = Object.values(LOCATIONS_DATA);

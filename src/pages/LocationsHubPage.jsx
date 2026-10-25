@@ -1,19 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { LOCATIONS_DATA } from "../data/locationsData";
 import { BRAND_INFO, getWhatsAppLink } from "../data/brandInfo";
 import SeoMeta from "../components/SeoMeta";
-import { MapPin, ArrowRight, ShieldCheck, Camera, Sparkles, MessageCircle } from "lucide-react";
+import { MapPin, ArrowRight, Search, MessageCircle } from "lucide-react";
 
 export default function LocationsHubPage({ onNavigate, onOpenInquiry }) {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedZone, setSelectedZone] = useState("All");
+
+  const allLocations = Object.values(LOCATIONS_DATA);
+
+  // Extract distinct zones
+  const zones = ["All", "Coastal Odisha", "Western Odisha", "Northern Odisha", "Southern Odisha", "Central Odisha"];
+
+  const filteredLocations = allLocations.filter((loc) => {
+    const matchesSearch =
+      loc.city.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (loc.district && loc.district.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (loc.tagline && loc.tagline.toLowerCase().includes(searchQuery.toLowerCase()));
+
+    const matchesZone = selectedZone === "All" || loc.zone === selectedZone;
+
+    return matchesSearch && matchesZone;
+  });
+
   const hubSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Wedding Photography & Cinematography Locations in Odisha by Elvora Film",
-    "description": "Elvora Film documents luxury weddings and destination celebrations across all major cities and coastal retreats in Odisha.",
-    "itemListElement": Object.values(LOCATIONS_DATA).map((loc, idx) => ({
+    "name": "Wedding Photography & Cinematography Services Across All 30 Districts of Odisha — Elvora Film",
+    "description": "Elvora Film covers luxury weddings, traditional Odia ceremonies, and destination celebrations across every single district of Odisha.",
+    "numberOfItems": allLocations.length,
+    "itemListElement": allLocations.map((loc, idx) => ({
       "@type": "ListItem",
       "position": idx + 1,
-      "name": `Wedding Photography in ${loc.city}`,
+      "name": `Wedding Photography in ${loc.city} (${loc.district || loc.city})`,
       "url": `https://www.elvorafilm.com/#location-${loc.slug}`
     }))
   };
@@ -21,14 +41,17 @@ export default function LocationsHubPage({ onNavigate, onOpenInquiry }) {
   return (
     <main style={{ backgroundColor: "#FAF7F2", color: "#181614", paddingTop: "5.5rem" }}>
       <SeoMeta
-        title="Top Wedding Photography Locations in Odisha | Elvora Film"
-        description="Explore luxury wedding photography & cinematography across Odisha: Bhubaneswar, Cuttack, Berhampur, Puri, and destination coastal retreats with Elvora Film."
+        title="Wedding Photography in All 30 Districts of Odisha | Elvora Film"
+        description="Comprehensive wedding photography & cinematic films across all 30 districts of Odisha: Bhubaneswar, Cuttack, Sambalpur, Rourkela, Berhampur, Puri, Balasore & beyond."
         keywords={[
-          "Wedding photography locations Odisha",
+          "Wedding photography in Odisha 30 districts",
           "Wedding photographer Bhubaneswar",
-          "Wedding photography Cuttack",
+          "Wedding photographer Cuttack",
+          "Wedding photographer Sambalpur",
+          "Wedding photographer Rourkela",
           "Wedding photographer Berhampur",
-          "Beach wedding Puri",
+          "Wedding photographer Puri",
+          "Wedding photography Balasore",
           "Elvora Film Odisha"
         ]}
         canonicalUrl="https://www.elvorafilm.com/#locations"
@@ -44,20 +67,32 @@ export default function LocationsHubPage({ onNavigate, onOpenInquiry }) {
           textAlign: "center"
         }}
       >
-        <div className="container" style={{ maxWidth: "900px" }}>
-          <span
+        <div className="container" style={{ maxWidth: "950px" }}>
+          <div
             style={{
-              fontFamily: "var(--font-label)",
-              fontSize: "0.78rem",
-              letterSpacing: "0.24em",
-              color: "var(--color-gold)",
-              textTransform: "uppercase",
-              display: "block",
-              marginBottom: "1rem"
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              backgroundColor: "rgba(197, 160, 89, 0.15)",
+              border: "1px solid rgba(197, 160, 89, 0.3)",
+              padding: "0.35rem 1rem",
+              borderRadius: "20px",
+              marginBottom: "1.2rem"
             }}
           >
-            REGIONAL WEDDING COVERAGE • ODISHA
-          </span>
+            <MapPin size={15} color="var(--color-gold)" />
+            <span
+              style={{
+                fontFamily: "var(--font-label)",
+                fontSize: "0.76rem",
+                letterSpacing: "0.2em",
+                color: "var(--color-gold-light)",
+                textTransform: "uppercase"
+              }}
+            >
+              ALL 30 DISTRICTS OF ODISHA COVERED
+            </span>
+          </div>
 
           <h1
             style={{
@@ -69,7 +104,7 @@ export default function LocationsHubPage({ onNavigate, onOpenInquiry }) {
               color: "#FFFFFF"
             }}
           >
-            Preserving Love Stories Across Odisha
+            Preserving Sacred Love Stories in Every Corner of Odisha
           </h1>
 
           <p
@@ -77,11 +112,11 @@ export default function LocationsHubPage({ onNavigate, onOpenInquiry }) {
               fontSize: "1.1rem",
               lineHeight: 1.75,
               color: "rgba(255, 255, 255, 0.8)",
-              maxWidth: "750px",
+              maxWidth: "780px",
               margin: "0 auto 2.5rem auto"
             }}
           >
-            From the historic temples of Bhubaneswar and the silver filigree heritage of Cuttack, to the silk handloom traditions of Berhampur and the roaring shores of Puri.
+            From the grand coastal ballrooms of Bhubaneswar and Puri to the royal Sambalpuri handloom weddings of Western Odisha, the steel city opulence of Rourkela, and the misty hills of Koraput and Daringbadi.
           </p>
 
           <div style={{ display: "inline-flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
@@ -90,10 +125,10 @@ export default function LocationsHubPage({ onNavigate, onOpenInquiry }) {
               className="btn btn-gold"
               style={{ padding: "0.95rem 2rem" }}
             >
-              Inquire for Your Date
+              Inquire for Your Wedding Date
             </button>
             <a
-              href={getWhatsAppLink("Hi Elvora Film, I would like to check availability for our wedding in Odisha.")}
+              href={getWhatsAppLink("Hi Elvora Film, I would like to check wedding photography availability for our district in Odisha.")}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-outline"
@@ -106,90 +141,187 @@ export default function LocationsHubPage({ onNavigate, onOpenInquiry }) {
         </div>
       </section>
 
-      {/* Grid of Locations */}
-      <section style={{ padding: "clamp(4.5rem, 7vw, 6.5rem) 1.5rem" }}>
+      {/* Search & Zone Filter Bar */}
+      <section
+        style={{
+          backgroundColor: "#FFFFFF",
+          borderBottom: "1px solid rgba(0, 0, 0, 0.08)",
+          padding: "1.5rem",
+          position: "sticky",
+          top: "60px",
+          zIndex: 10,
+          boxShadow: "0 2px 10px rgba(0,0,0,0.03)"
+        }}
+      >
+        <div className="container" style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+          {/* Search Box */}
+          <div style={{ position: "relative", maxWidth: "550px", width: "100%", margin: "0 auto" }}>
+            <Search
+              size={18}
+              color="var(--color-gold-dark)"
+              style={{ position: "absolute", left: "14px", top: "50%", transform: "translateY(-50%)" }}
+            />
+            <input
+              type="text"
+              placeholder="Search your district or city (e.g. Sambalpur, Rourkela, Balasore, Mayurbhanj)..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              style={{
+                width: "100%",
+                padding: "0.75rem 1rem 0.75rem 2.6rem",
+                borderRadius: "30px",
+                border: "1px solid rgba(197, 160, 89, 0.4)",
+                backgroundColor: "#FAF7F2",
+                fontSize: "0.92rem",
+                outline: "none"
+              }}
+            />
+          </div>
+
+          {/* Zone Filter Pills */}
+          <div
+            style={{
+              display: "flex",
+              gap: "0.5rem",
+              overflowX: "auto",
+              justifyContent: "center",
+              flexWrap: "wrap",
+              paddingBottom: "0.2rem"
+            }}
+          >
+            {zones.map((zone) => (
+              <button
+                key={zone}
+                onClick={() => setSelectedZone(zone)}
+                style={{
+                  backgroundColor: selectedZone === zone ? "var(--color-gold)" : "#F3EFE8",
+                  color: selectedZone === zone ? "#0C0C0E" : "#4A453F",
+                  border: "none",
+                  padding: "0.45rem 1.1rem",
+                  borderRadius: "20px",
+                  fontSize: "0.82rem",
+                  fontWeight: selectedZone === zone ? 600 : 400,
+                  cursor: "pointer",
+                  whiteSpace: "nowrap",
+                  transition: "all 0.2s ease"
+                }}
+              >
+                {zone}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Grid of All 30 Districts */}
+      <section style={{ padding: "clamp(3.5rem, 6vw, 5.5rem) 1.5rem" }}>
         <div className="container">
+          <div style={{ marginBottom: "2rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
+            <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "1.8rem", margin: 0, fontWeight: 400 }}>
+              Showing {filteredLocations.length} of 30 Districts
+            </h2>
+            <span style={{ fontSize: "0.85rem", color: "#666" }}>
+              Click any district to explore venues, rituals, pricing &amp; availability
+            </span>
+          </div>
+
           <div
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gap: "2.5rem"
+              gap: "2rem"
             }}
           >
-            {Object.values(LOCATIONS_DATA).map((loc) => (
+            {filteredLocations.map((loc) => (
               <article
                 key={loc.slug}
                 style={{
                   backgroundColor: "#FFFFFF",
-                  borderRadius: "12px",
+                  borderRadius: "10px",
                   border: "1px solid rgba(0, 0, 0, 0.08)",
                   overflow: "hidden",
                   display: "flex",
                   flexDirection: "column",
                   boxShadow: "0 4px 20px rgba(0,0,0,0.03)",
-                  transition: "transform 0.3s ease, box-shadow 0.3s ease"
+                  transition: "transform 0.25s ease, box-shadow 0.25s ease"
                 }}
               >
-                <div style={{ padding: "2.2rem", flex: 1, display: "flex", flexDirection: "column" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.75rem" }}>
-                    <MapPin size={17} color="var(--color-gold)" />
-                    <span style={{ fontSize: "0.82rem", color: "var(--color-gold)", fontWeight: 600, letterSpacing: "0.08em" }}>
-                      {loc.regionName.toUpperCase()}
+                <div style={{ padding: "2rem", flex: 1, display: "flex", flexDirection: "column" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.6rem" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+                      <MapPin size={15} color="var(--color-gold)" />
+                      <span style={{ fontSize: "0.78rem", color: "var(--color-gold-dark)", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                        {loc.zone || "ODISHA"}
+                      </span>
+                    </div>
+
+                    <span style={{ fontSize: "0.72rem", backgroundColor: "#F3EFE8", padding: "0.2rem 0.55rem", borderRadius: "10px", color: "#555" }}>
+                      PIN: {loc.pinCode}
                     </span>
                   </div>
 
-                  <h2
+                  <h3
                     style={{
                       fontFamily: "var(--font-serif)",
-                      fontSize: "2rem",
-                      fontWeight: 400,
+                      fontSize: "1.85rem",
+                      fontWeight: 500,
                       color: "#181614",
-                      marginBottom: "0.75rem"
+                      margin: "0.3rem 0 0.5rem 0"
                     }}
                   >
                     {loc.city}
-                  </h2>
+                  </h3>
+
+                  {loc.district && loc.district !== loc.city && (
+                    <span style={{ fontSize: "0.82rem", color: "#777", marginBottom: "0.6rem", display: "block" }}>
+                      {loc.district} District
+                    </span>
+                  )}
 
                   <p
                     style={{
                       fontFamily: "var(--font-serif)",
                       fontStyle: "italic",
-                      fontSize: "1.05rem",
+                      fontSize: "0.98rem",
                       color: "var(--color-gold-dark)",
-                      marginBottom: "1rem"
+                      marginBottom: "0.85rem",
+                      lineHeight: 1.45
                     }}
                   >
                     "{loc.tagline}"
                   </p>
 
-                  <p style={{ fontSize: "0.93rem", color: "#5E5850", lineHeight: 1.65, marginBottom: "1.5rem", flex: 1 }}>
+                  <p style={{ fontSize: "0.9rem", color: "#5E5850", lineHeight: 1.6, marginBottom: "1.2rem", flex: 1 }}>
                     {loc.heroExcerpt}
                   </p>
 
-                  {/* Top Venues pill list */}
-                  <div style={{ marginBottom: "1.5rem" }}>
-                    <span style={{ fontSize: "0.78rem", fontWeight: 600, color: "#888", display: "block", marginBottom: "0.5rem" }}>
-                      FEATURED VENUES &amp; HUBS:
-                    </span>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
-                      {loc.topVenues.slice(0, 3).map((v, idx) => (
-                        <span
-                          key={idx}
-                          style={{
-                            fontSize: "0.76rem",
-                            backgroundColor: "#F3EFE8",
-                            padding: "0.25rem 0.65rem",
-                            borderRadius: "14px",
-                            color: "#4A453F"
-                          }}
-                        >
-                          {v.name.split("&")[0]}
-                        </span>
-                      ))}
+                  {/* Venues Snippet */}
+                  {loc.topVenues && loc.topVenues.length > 0 && (
+                    <div style={{ marginBottom: "1.5rem" }}>
+                      <span style={{ fontSize: "0.75rem", fontWeight: 600, color: "#888", display: "block", marginBottom: "0.4rem" }}>
+                        POPULAR VENUES:
+                      </span>
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.35rem" }}>
+                        {loc.topVenues.slice(0, 2).map((v, idx) => (
+                          <span
+                            key={idx}
+                            style={{
+                              fontSize: "0.74rem",
+                              backgroundColor: "#FAF7F2",
+                              border: "1px solid rgba(0,0,0,0.06)",
+                              padding: "0.2rem 0.55rem",
+                              borderRadius: "12px",
+                              color: "#4A453F"
+                            }}
+                          >
+                            {v.name.split("&")[0].slice(0, 26)}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
 
-                  {/* Link CTA */}
+                  {/* Action Link */}
                   <button
                     onClick={() => onNavigate(`location-${loc.slug}`)}
                     className="btn btn-outline"
@@ -198,16 +330,35 @@ export default function LocationsHubPage({ onNavigate, onOpenInquiry }) {
                       justifyContent: "space-between",
                       display: "flex",
                       alignItems: "center",
-                      marginTop: "auto"
+                      marginTop: "auto",
+                      padding: "0.75rem 1.2rem",
+                      fontSize: "0.85rem"
                     }}
                   >
-                    <span>View {loc.city} Wedding Guide</span>
-                    <ArrowRight size={16} />
+                    <span>{loc.city} Wedding Guide</span>
+                    <ArrowRight size={15} />
                   </button>
                 </div>
               </article>
             ))}
           </div>
+
+          {filteredLocations.length === 0 && (
+            <div style={{ textAlign: "center", padding: "4rem 1rem", backgroundColor: "#FFFFFF", borderRadius: "10px" }}>
+              <p style={{ fontSize: "1.1rem", color: "#666", marginBottom: "1rem" }}>
+                No district found matching "{searchQuery}".
+              </p>
+              <button
+                onClick={() => {
+                  setSearchQuery("");
+                  setSelectedZone("All");
+                }}
+                className="btn btn-gold"
+              >
+                Clear Search &amp; Show All 30 Districts
+              </button>
+            </div>
+          )}
         </div>
       </section>
     </main>

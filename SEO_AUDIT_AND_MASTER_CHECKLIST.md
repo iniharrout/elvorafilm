@@ -65,17 +65,50 @@ Comprehensive XML sitemap adhering to Sitemaps.org standards covering **20 URLs*
 
 ---
 
-## 3. Dedicated Odisha Location Landing Pages Built
+## 3. Dedicated Odisha Location Landing Pages Built (All 30 Districts)
 
-To capture high-intent local queries across Odisha's top wedding markets, dedicated landing pages were designed and deployed:
+To capture high-intent local search queries across all 30 districts of Odisha, dedicated landing pages with `LocalBusiness` and `FAQPage` schema have been deployed across 5 regional zones:
 
-| Location | URL Hash / Route | Primary Target Keywords | Highlights & Local Schema |
-| :--- | :--- | :--- | :--- |
-| **Bhubaneswar** | `/#location-bhubaneswar` | *Best wedding photographer in Bhubaneswar*, *Wedding cinematography Bhubaneswar* | Mayfair Lagoon, Swosti Premium, Vivanta, Welcomhotel; LocalBusiness GeoCoords (20.2520, 85.7725); Local FAQs with FAQPage Schema. |
-| **Cuttack (Kattag)** | `/#location-cuttack` | *Wedding photographer in Cuttack*, *Wedding photographer in Kattag*, *Barabati wedding* | Barabati Palace, Mahanadi riverfront, Tarakasi silver filigree heritage; zero travel fee guarantee for twin city. |
-| **Berhampur (Barampur)** | `/#location-berhampur` | *Wedding photographer in Berhampur*, *Barampur wedding films*, *Gopalpur pre-wedding* | Berhampuri Patta silk sarees, Mayfair Palm Beach Gopalpur, coastal cinematography, Ganjam tradition expertise. |
-| **Puri** | `/#location-puri` | *Destination wedding photographer in Puri*, *Puri beach wedding photography* | Toshali Sands, Mayfair Waves, Jagannath Mahaprasad rituals, Marine Drive coastal drone footage. |
-| **Odisha Hub** | `/#locations` | *Wedding photography locations Odisha*, *Wedding cinematographer Odisha* | Overview index linking all regional locations with internal link equity. |
+### A. Coastal Odisha
+- **Khordha / Bhubaneswar** (`/#location-bhubaneswar`): Mayfair Lagoon, Swosti Premium, Vivanta DN Square, Welcomhotel.
+- **Cuttack / Kattag** (`/#location-cuttack`): Barabati Palace, Mahanadi riverfront, Tarakasi silver filigree Mukuta.
+- **Puri** (`/#location-puri`): Toshali Sands, Mayfair Waves, Jagannath Mahaprasad, Marine Drive coastal drone shoots.
+- **Balasore / Baleswar** (`/#location-balasore`): Chandipur vanishing sea, NOCCI Convention, Emami Jagannath Temple.
+- **Bhadrak** (`/#location-bhadrak`): Maa Bhadrakali blessings, Salandi riverfront banquets.
+- **Jagatsinghpur** (`/#location-jagatsinghpur`): Paradip Port, Maa Sarala Temple, coastal casuarina groves.
+- **Kendrapara** (`/#location-kendrapara`): Lord Baladevjew Temple, Bhitarkanika river delta, Rasabali traditions.
+
+### B. Western Odisha
+- **Sambalpur** (`/#location-sambalpur`): Maa Samaleswari temple lagna, Hirakud reservoir, Sambalpuri Ikat silks.
+- **Sundargarh / Rourkela** (`/#location-sundargarh`): Mayfair Rourkela, Vedvyas river confluence, steel city cosmopolitan banquets.
+- **Balangir** (`/#location-balangir`): Sailashree Palace greens, Patnagarh Samaleswari, Chauhan royal heritage.
+- **Bargarh** (`/#location-bargarh`): Dhanu Yatra open-air theater heritage, Barpali handloom weaver enclave.
+- **Jharsuguda** (`/#location-jharsuguda`): Hotel Micro Continental, Western commercial gateway, modern sangeets.
+- **Kalahandi** (`/#location-kalahandi`): Maa Manikeswari Palace, Bhawanipatna, Chhatar festive rhythms.
+- **Nuapada** (`/#location-nuapada`): Khariar royal dynasty legacy, Patora Dam horizons.
+- **Subarnapur / Sonepur** (`/#location-subarnapur`): Subarnameru Palace, "Second Varanasi" river confluences, Bomkai silk art.
+
+### C. Northern Odisha
+- **Mayurbhanj / Baripada** (`/#location-mayurbhanj`): The Belgadia Palace royal destination weddings, Chhau dance, Tussar silk.
+- **Kendujhar / Keonjhar** (`/#location-kendujhar`): Ghatagaon Tarini Pitha, Sanaghagara waterfalls, mineral kingdom grace.
+- **Deogarh / Debagarh** (`/#location-deogarh`): Pradhanpat waterfalls, Bamra royal kingdom traditions.
+
+### D. Southern Odisha
+- **Ganjam / Berhampur** (`/#location-berhampur`): Berhampuri Patta silks, Mayfair Palm Beach Gopalpur, coastal mandaps.
+- **Koraput / Jeypore** (`/#location-koraput`): Deomali mountain sunrise pre-weddings, Kotpad organic dyes, Jeypore palace.
+- **Rayagada** (`/#location-rayagada`): Maa Majhighariani temple blessings, Nagavali river suspension bridge.
+- **Gajapati / Paralakhemundi** (`/#location-gajapati`): Gajapati royal palace courtyards, Mahendragiri mist.
+- **Kandhamal / Phulbani** (`/#location-kandhamal`): Daringbadi ("Kashmir of Odisha") pine forests, cool mountain vows.
+- **Nabarangpur** (`/#location-nabarangpur`): Indravati riverfront serene lawns, sal tree canopies.
+- **Malkangiri** (`/#location-malkangiri`): Chitrakonda azure waters, Gurupriya bridge aerial perspectives.
+
+### E. Central Odisha
+- **Angul** (`/#location-angul`): Hotel Shakti Continental, Saila Srikhetra Jagannath temple, Nalco/Jindal banquets.
+- **Dhenkanal** (`/#location-dhenkanal`): Dhenkanal Palace royal heritage homestays, Kapilash foothill lawns, Dokra craft.
+- **Jajpur** (`/#location-jajpur`): Ancient Biraja Shakti Peetha sanctity, Baitarani river ghats.
+- **Nayagarh** (`/#location-nayagarh`): Kantilo Nilamadhaba riverfront greens, legendary Chhena Poda wedding dessert stations.
+- **Boudh** (`/#location-boudh`): Ancient star-shaped Buddhist & Shaivite temples along the Mahanadi curves.
+- **Odisha Hub** (`/#locations`): Central portal with search and zone filtering linking all 30 districts.
 
 ---
 

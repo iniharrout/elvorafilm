@@ -1,140 +1,310 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <!-- Core Pages -->
+  <!-- Core Website Pages -->
   <url>
     <loc>https://www.elvorafilm.com/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.elvorafilm.com/#stories</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.elvorafilm.com/#services</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.elvorafilm.com/#packages</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.elvorafilm.com/#about</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.elvorafilm.com/#contact</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Regional Odisha Location Landing Pages (Local SEO) -->
+  <!-- Regional Odisha Locations Hub -->
   <url>
     <loc>https://www.elvorafilm.com/#locations</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.elvorafilm.com/#location-bhubaneswar</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
+
+  <!-- ALL 30 DISTRICTS OF ODISHA (Complete Local SEO Coverage) -->
+  <url>
+    <loc>https://www.elvorafilm.com/#location-angul</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-balangir</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-balasore</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-bargarh</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-bhadrak</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-bhubaneswar</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.98</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-boudh</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
   <url>
     <loc>https://www.elvorafilm.com/#location-cuttack</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.96</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-deogarh</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-dhenkanal</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-gajapati</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-ganjam</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://www.elvorafilm.com/#location-berhampur</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://www.elvorafilm.com/#location-jagatsinghpur</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-jajpur</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-jharsuguda</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-kalahandi</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-kandhamal</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-kendrapara</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-kendujhar</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-khordha</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.98</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-koraput</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-malkangiri</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-mayurbhanj</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-nabarangpur</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-nayagarh</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-nuapada</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
     <loc>https://www.elvorafilm.com/#location-puri</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.96</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-rayagada</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-sambalpur</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-subarnapur</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://www.elvorafilm.com/#location-sundargarh</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
 
-  <!-- Blog & Editorial Guides (Topical Authority Engine) -->
+  <!-- Editorial Blog Guides (Topical Authority Engine) -->
   <url>
     <loc>https://www.elvorafilm.com/#blog</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.elvorafilm.com/#blog/top-wedding-venues-in-bhubaneswar-odisha</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.elvorafilm.com/#blog/wedding-photography-cost-odisha-pricing-packages</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.elvorafilm.com/#blog/odia-wedding-rituals-guide-traditions</loc>
-    <lastmod>2026-03-10</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.elvorafilm.com/#blog/best-pre-wedding-shoot-locations-bhubaneswar-odisha</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.elvorafilm.com/#blog/candid-vs-traditional-wedding-photography</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.elvorafilm.com/#blog/drone-fpv-cinematography-indian-weddings</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.elvorafilm.com/#blog/pre-wedding-shoot-outfit-styling-ideas</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.elvorafilm.com/#blog/puri-destination-wedding-planning-photography-guide</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.elvorafilm.com/#blog/wedding-day-photography-timeline-checklist</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.elvorafilm.com/#blog/how-to-choose-best-wedding-cinematographer-odisha</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -142,13 +312,13 @@
   <!-- Legal & Policies -->
   <url>
     <loc>https://www.elvorafilm.com/#privacy</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.elvorafilm.com/#terms</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

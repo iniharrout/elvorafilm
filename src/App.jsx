@@ -21,6 +21,7 @@ import LocationPage from "./pages/LocationPage";
 import LocationsHubPage from "./pages/LocationsHubPage";
 import BlogListPage from "./pages/BlogListPage";
 import BlogPostPage from "./pages/BlogPostPage";
+import { LOCATIONS_DATA } from "./data/locationsData";
 
 export default function App() {
   const [currentRoute, setCurrentRoute] = useState("home");
@@ -51,25 +52,47 @@ export default function App() {
         }
       }
 
-      // Check for locations alias mapping
-      if (raw === "bhubaneswar" || raw === "location-bhubaneswar") {
-        setCurrentCityKey("bhubaneswar");
-        setCurrentRoute("location-bhubaneswar");
+      // Check for location prefix: e.g. #location-sambalpur
+      if (raw.startsWith("location-")) {
+        const key = raw.replace("location-", "");
+        if (LOCATIONS_DATA[key]) {
+          setCurrentCityKey(key);
+          setCurrentRoute(raw);
+          return;
+        }
+      }
+
+      // Common aliases for key cities/districts
+      if (raw === "rourkela" || raw === "location-rourkela") {
+        setCurrentCityKey("sundargarh");
+        setCurrentRoute("location-sundargarh");
         return;
       }
-      if (raw === "cuttack" || raw === "kattag" || raw === "location-cuttack" || raw === "location-kattag") {
+      if (raw === "baripada" || raw === "location-baripada") {
+        setCurrentCityKey("mayurbhanj");
+        setCurrentRoute("location-mayurbhanj");
+        return;
+      }
+      if (raw === "jeypore" || raw === "location-jeypore") {
+        setCurrentCityKey("koraput");
+        setCurrentRoute("location-koraput");
+        return;
+      }
+      if (raw === "kattag" || raw === "location-kattag") {
         setCurrentCityKey("cuttack");
         setCurrentRoute("location-cuttack");
         return;
       }
-      if (raw === "berhampur" || raw === "barampur" || raw === "brahmapur" || raw === "location-berhampur" || raw === "location-barampur") {
+      if (raw === "barampur" || raw === "brahmapur" || raw === "location-barampur") {
         setCurrentCityKey("berhampur");
         setCurrentRoute("location-berhampur");
         return;
       }
-      if (raw === "puri" || raw === "location-puri") {
-        setCurrentCityKey("puri");
-        setCurrentRoute("location-puri");
+
+      // Direct district slug match (e.g. #sambalpur, #angul, #balasore)
+      if (LOCATIONS_DATA[raw]) {
+        setCurrentCityKey(raw);
+        setCurrentRoute(`location-${raw}`);
         return;
       }
 
@@ -109,6 +132,10 @@ export default function App() {
       setCurrentCityKey(city);
       setCurrentRoute(route);
       window.location.hash = route;
+    } else if (LOCATIONS_DATA[route]) {
+      setCurrentCityKey(route);
+      setCurrentRoute(`location-${route}`);
+      window.location.hash = `location-${route}`;
     } else if (route === "blog-post" && param) {
       setSelectedBlogSlug(param);
       setCurrentRoute("blog-post");
